@@ -1,22 +1,20 @@
-文件目录
-------------------
-player_pygame.py
+这是一个能把renpy台词连接edge-tts语音化，通过pygame来播放的插件
 
+
+------------------
+文件目录
+player_pygame.py
 放置在 game 目录下
 需要安装依赖，pygame
-----------------------
+-----
 edge_tts_integration.rpy
-
 放置在 game 目录下
 需要安装依赖 edge_tts
 开头的代码需要改为系统python3的目录
     # 在游戏开始时指定 Python 路径
     edge_tts.custom_python = r"D:\Program\Anaconda\python.exe"
 ----------------------
-忽略语音的角色
 
-{None, "", "narrator", "null", "none"}的角色不能进行语音
-----------------------
 备注你的python目录
 
 renpy的 script文件需要开头注明
@@ -29,6 +27,11 @@ init python:
 ----------------------
 
 tts的使用
+----------------------
+忽略语音的角色
+
+{None, "", "narrator", "null", "none"}的角色不能进行语音
+----------------------
 使用以下代码进行更改速度
 edge_tts.set_rate("+50%")
 ----------------------
@@ -38,3 +41,8 @@ edge_tts.set_rate("+50%")
 $ edge_tts.enabled = False
 e "语音已关闭（这句话不会播放）"
 $ edge_tts.enabled = True
+
+参考项目
+https://github.com/renpy/renpy
+https://github.com/rany2/edge-tts
+https://github.com/pygame/pygame
